@@ -13,7 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//root
-Route::get('/', function () {
-    return view('index');
-});
+// //root
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+
+// //about
+// Route::get('/about', function () {
+//     $nama = 'Muhammad Syafiq';
+//     return view('about', ['nama' => $nama]);
+// });
+
+
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+
+
+Route::get('/mahasiswa', 'MahasiswaController@index');
+
+
+//Students
+Route::get('/students', 'StudentsController@index');
+
+Route::get('/students/{student}', 'StudentsController@show');
