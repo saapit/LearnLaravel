@@ -26,14 +26,27 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/', 'PagesController@home');
-Route::get('/about', 'PagesController@about');
+// Route::get('/', 'PagesController@home');
+// Route::get('/about', 'PagesController@about');
+// Route::get('/mahasiswa', 'MahasiswaController@index');
 
+// //Students
+// Route::get('/students', 'StudentsController@index');
 
-Route::get('/mahasiswa', 'MahasiswaController@index');
+// Route::get('/students/create', 'StudentsController@create');
 
+// Route::get('/students/{student}', 'StudentsController@show');
 
-//Students
-Route::get('/students', 'StudentsController@index');
+// // kalau method post, pergi ke /students, methodnya store
+// Route::post('/students', 'StudentsController@store');
 
-Route::get('/students/{student}', 'StudentsController@show');
+// // route for delete
+// Route::delete('/students/{student}', 'StudentsController@destroy');
+
+// // get = maksudnya pindah halaman
+// Route::get('/students/{student}/edit', 'StudentsController@edit');
+
+// Route::patch('/students/{student}', 'StudentsController@update');
+
+//code below simplify all route above
+Route::resource('students', 'StudentsController');

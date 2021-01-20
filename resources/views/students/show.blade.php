@@ -16,8 +16,14 @@
                   <p class="card-text">{{ $student->email }}</p>
                   <p class="card-text">{{ $student->jurusan }}</p>
 
-                  <button type="submit" class="btn btn-primary">Edit</button>
-                  <button type="submit" class="btn btn-danger">Delete</button>
+                  {{-- guna tag a(link) supaya nak move ke edit(prefered) page --}}
+                  <a href="{{ $student->id }}/edit" class="btn btn-primary">Edit</a>
+
+                    <form action="/students/{{ $student->id }}" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        @method('delete')
+                        @csrf
+                    </form>
                   <a href="/students" class="card-link">Kembali</a>
                 </div>
               </div>
